@@ -1,0 +1,24 @@
+name: Infrastructure as Code
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  terraform:
+    uses: Alves0611/templates/.github/workflows/core-terraform.yml@main
+    with:
+      aws_region: us-east-1
+      working_directory: terraform
+      tf_version: "1.7.5"
+      enable_infracost: true
+      enable_trivy: true
+      enable_checkov: true
+      enable_tflint: true
+      plan_on_push_main: true
+      apply_on_push_main: true
+    secrets:
+      AWS_ASSUME_ROLE: ${{ secrets.AWS_ASSUME_ROLE }}
+      INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
