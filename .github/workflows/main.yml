@@ -15,7 +15,6 @@ jobs:
     uses: Alves0611/templates/.github/workflows/core-terraform.yml@main
     with:
       aws_region: us-east-1
-      working_directory: terraform
       tf_version: "1.7.5"
       enable_infracost: true
       enable_trivy: true
