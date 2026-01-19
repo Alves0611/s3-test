@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform:
-    uses: Alves0611/templates/.github/workflows/core-terraform.yml@main
+    uses: Alves0611/templates/.github/workflows/core-terraform.yml@v1.0.0
     with:
       aws_region: us-east-1
       working_directory: terraform
