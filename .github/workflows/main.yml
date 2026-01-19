@@ -25,3 +25,4 @@ jobs:
     secrets:
       AWS_ASSUME_ROLE: ${{ secrets.AWS_ASSUME_ROLE }}
       INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }}
+      
