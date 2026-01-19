@@ -8,6 +8,10 @@ on:
 
 jobs:
   terraform:
+    permissions:
+      id-token: write      # Necessário para OIDC com AWS
+      contents: read       # Necessário para ler o código
+      pull-requests: write # Necessário para comentar nos PRs
     uses: Alves0611/templates/.github/workflows/core-terraform.yml@main
     with:
       aws_region: us-east-1
